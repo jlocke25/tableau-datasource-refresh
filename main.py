@@ -1,6 +1,6 @@
 import tableauserverclient as TSC
 import sys
-from acon import tableau
+from custom_config import tableau #custom config file with parameters, token, etc.
 
 #Create Tableau Server Connnection Process
 class TableauServerConnection:
@@ -31,7 +31,7 @@ def refreshDataSourceTableauServer(myTSConnection, datasource_id):
         print('[Datasource {} refreshed]'.format(datasource.name))
 
 #Create connection to Tableau Server using parameters from config.py
-tsConn = TableauServerConnection(tableau.prod_msc.url,tableau.prod_msc.token_name,tableau.prod_msc.token, tableau.prod_msc.site)
+tsConn = TableauServerConnection(tableau.prod.url,tableau.prod.token_name,tableau.prod.token, tableau.prod.site)
 
 
 if len(sys.argv) != 2:
